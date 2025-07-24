@@ -1032,3 +1032,16 @@ html {
 .code-lab-page .price {
     color: #444 !important;
 } 
+.upcoming-events {
+  background: linear-gradient(90deg, #fbb040 0%, #f15a3c 100%);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.event-image {
+  max-width: 90%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+}
