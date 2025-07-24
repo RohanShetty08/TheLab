@@ -1,1034 +1,264 @@
-/* Reset and Base Styles */
+/\* Reset and Base Styles \*/
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: #fff7ed;
-    background: linear-gradient(135deg, #f15a3c 0%, #fbb040 100%);
-}
-
-body, h1, h2, h3, h4, h5, h6, p, a, span, li, .btn, .btn-lab, .btn-primary, .btn-secondary, .nav-brand, .footer, .footer-section, .footer-section h3, .footer-section h4, .footer-section p, .footer-section ul li a, .lab-card, .lab-card h3, .lab-card p, .hero-title, .hero-subtitle, .section-header h2, .section-header p, .start-lab-text h2, .start-lab-text p {
-    color: #fff !important;
-}
-
-body.tennis-lab-page, .tennis-lab-page h1, .tennis-lab-page h2, .tennis-lab-page h3, .tennis-lab-page h4, .tennis-lab-page h5, .tennis-lab-page h6, .tennis-lab-page p, .tennis-lab-page a, .tennis-lab-page span, .tennis-lab-page li, .tennis-lab-page .btn, .tennis-lab-page .btn-lab, .tennis-lab-page .btn-primary, .tennis-lab-page .btn-secondary, .tennis-lab-page .nav-brand, .tennis-lab-page .footer, .tennis-lab-page .footer-section, .tennis-lab-page .footer-section h3, .tennis-lab-page .footer-section h4, .tennis-lab-page .footer-section p, .tennis-lab-page .footer-section ul li a, .tennis-lab-page .lab-card, .tennis-lab-page .lab-card h3, .tennis-lab-page .lab-card p, .tennis-lab-page .hero-title, .tennis-lab-page .hero-subtitle, .tennis-lab-page .section-header, .tennis-lab-page .section-header h2, .tennis-lab-page .section-header p, .tennis-lab-page .start-lab-text h2, .tennis-lab-page .start-lab-text p {
-    color: #111 !important;
-}
-
-body.basketball-lab-page, .basketball-lab-page h1, .basketball-lab-page h2, .basketball-lab-page h3, .basketball-lab-page h4, .basketball-lab-page h5, .basketball-lab-page h6, .basketball-lab-page p, .basketball-lab-page a, .basketball-lab-page span, .basketball-lab-page li, .basketball-lab-page .btn, .basketball-lab-page .btn-lab, .basketball-lab-page .btn-primary, .basketball-lab-page .btn-secondary, .basketball-lab-page .nav-brand, .basketball-lab-page .footer, .basketball-lab-page .footer-section, .basketball-lab-page .footer-section h3, .basketball-lab-page .footer-section h4, .basketball-lab-page .footer-section p, .basketball-lab-page .footer-section ul li a, .basketball-lab-page .lab-card, .basketball-lab-page .lab-card h3, .basketball-lab-page .lab-card p, .basketball-lab-page .hero-title, .basketball-lab-page .hero-subtitle, .basketball-lab-page .section-header, .basketball-lab-page .section-header h2, .basketball-lab-page .section-header p, .basketball-lab-page .start-lab-text h2, .basketball-lab-page .start-lab-text p,
-body.code-lab-page, .code-lab-page h1, .code-lab-page h2, .code-lab-page h3, .code-lab-page h4, .code-lab-page h5, .code-lab-page h6, .code-lab-page p, .code-lab-page a, .code-lab-page span, .code-lab-page li, .code-lab-page .btn, .code-lab-page .btn-lab, .code-lab-page .btn-primary, .code-lab-page .btn-secondary, .code-lab-page .nav-brand, .code-lab-page .footer, .code-lab-page .footer-section, .code-lab-page .footer-section h3, .code-lab-page .footer-section h4, .code-lab-page .footer-section p, .code-lab-page .footer-section ul li a, .code-lab-page .lab-card, .code-lab-page .lab-card h3, .code-lab-page .lab-card p, .code-lab-page .hero-title, .code-lab-page .hero-subtitle, .code-lab-page .section-header, .code-lab-page .section-header h2, .code-lab-page .section-header p, .code-lab-page .start-lab-text h2, .code-lab-page .start-lab-text p {
-    color: #111 !important;
+font-family: 'Inter', sans-serif;
+line-height: 1.6;
+color: #fff7ed;
+background: linear-gradient(135deg, #f15a3c 0%, #fbb040 100%);
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
 }
 
-/* Navigation */
+/\* Navigation \*/
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #fff !important;
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+position: fixed;
+top: 0;
+width: 100%;
+background: #fff;
+backdrop-filter: blur(10px);
+z-index: 1000;
+padding: 1rem 0;
+box-shadow: 0 2px 20px rgba(0,0,0,0.08);
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
 }
 
 .nav-brand {
-    color: #111;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+color: #111;
+font-size: 1.5rem;
+font-weight: 700;
 }
 
 .nav-links {
-    display: flex;
-    gap: 2rem;
+display: flex;
+gap: 2rem;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #111;
-    font-weight: 500;
-    transition: color 0.3s ease;
+text-decoration: none;
+color: #111;
+font-weight: 500;
 }
 
-.nav-links a:hover {
-    color: #f15a3c;
-}
-
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.nav-toggle span {
-    width: 25px;
-    height: 3px;
-    background: #374151;
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
-/* Hero Section */
+/\* Hero Section \*/
 .hero {
-    padding: 120px 0 80px;
-    background: linear-gradient(135deg, #fbb040 0%, #f15a3c 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+padding: 120px 0 80px;
+display: flex;
+align-items: center;
+background: linear-gradient(135deg, #fbb040 0%, #f15a3c 100%);
+min-height: 100vh;
 }
 
 .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+align-items: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+font-size: 3.5rem;
+font-weight: 700;
+color: #111;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    color: #fbbf24;
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
+font-size: 1.25rem;
+color: #fbbf24;
+margin-bottom: 2.5rem;
 }
 
 .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+display: flex;
+gap: 1rem;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-align: center;
+padding: 12px 24px;
+border-radius: 12px;
+text-decoration: none;
+font-weight: 600;
+font-size: 1rem;
+border: none;
+cursor: pointer;
+text-align: center;
 }
 
 .btn-primary {
-    background: #f15a3c;
-    color: #fff;
-    box-shadow: 0 4px 14px rgba(241, 90, 60, 0.3);
-}
-
-.btn-primary:hover {
-    background: #fbb040;
-    color: #f15a3c;
+background: #f15a3c;
+color: #fff;
 }
 
 .btn-secondary {
-    background: transparent;
-    color: #fde68a;
-    border: 2px solid #fde68a;
+background: transparent;
+color: #fde68a;
+border: 2px solid #fde68a;
 }
 
-.btn-secondary:hover {
-    background: #fde68a;
-    color: #7c2d12;
-}
-
-.btn-lab {
-    background: #fbb040;
-    color: #f15a3c;
-    border: 2px solid #fff;
-    margin-top: 1rem;
-}
-
-.btn-lab:hover {
-    background: #f15a3c;
-    color: #fff;
-    border-color: #fbb040;
-}
-
-/* Hero Visual */
+/\* Hero Visual \*/
 .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .hero-graphic {
-    position: relative;
-    width: 420px;
-    height: 420px;
+position: relative;
+width: 420px;
+height: 420px;
 }
 
 .floating-card {
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    background: #f15a3c;
-    border-radius: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 32px rgba(241, 90, 60, 0.18);
-    animation: float 6s ease-in-out infinite;
+position: absolute;
+width: 160px;
+height: 160px;
+background: transparent;
+border-radius: 32px;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: none;
+animation: float 6s ease-in-out infinite;
 }
 
-.floating-card i {
-    font-size: 2rem;
-    color: #f97316;
-}
-
-.card-1 {
-    top: 80px;
-    left: 40px;
-    animation-delay: 0s;
-}
-
-.card-2 {
-    top: 160px;
-    right: -40px;
-    animation-delay: 2s;
-}
-
-.card-3 {
-    bottom: -20px;
-    left: 120px;
-    animation-delay: 4s;
-}
+.card-1 { top: 80px; left: 40px; animation-delay: 0s; }
+.card-2 { top: 160px; right: -40px; animation-delay: 2s; }
+.card-3 { bottom: -20px; left: 120px; animation-delay: 4s; }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+0%, 100% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
 }
 
-/* Labs Section */
+/\* Labs Section \*/
 .labs {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f15a3c 0%, #fbb040 100%);
+padding: 80px 0;
+background: linear-gradient(135deg, #f15a3c 0%, #fbb040 100%);
 }
 
 .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
+text-align: center;
+margin-bottom: 4rem;
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #7c2d12;
-    margin-bottom: 1rem;
+font-size: 2.5rem;
+font-weight: 700;
+color: #7c2d12;
+margin-bottom: 1rem;
 }
 
 .section-header p {
-    font-size: 1.125rem;
-    color: #92400e;
+font-size: 1.125rem;
+color: #92400e;
 }
 
 .labs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.labs-grid .btn-lab {
-    display: block;
-    margin: 1.5rem auto 0 auto;
-    width: fit-content;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
 }
 
 .lab-card {
-    background: #fff !important;
-    color: #111 !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    border: 1px solid #eee;
-    border-radius: 20px;
-    padding: 2.5rem;
-    transition: all 0.3s ease;
-}
-.lab-card h3, .lab-card p {
-    color: #111 !important;
+background: #fff;
+color: #111;
+border-radius: 20px;
+padding: 2.5rem;
+box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+transition: transform 0.3s ease;
 }
 
-.lab-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+.lab-card\:hover {
+transform: translateY(-8px);
+box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .lab-icon {
-    width: 60px;
-    height: 60px;
-    background: #f15a3c;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.lab-icon i {
-    font-size: 1.5rem;
-    color: #f97316;
+width: 60px;
+height: 60px;
+background: transparent;
+border-radius: 16px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 1.5rem;
+box-shadow: none;
+border: none;
 }
 
 .lab-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #f15a3c;
-    margin-bottom: 1rem;
+font-size: 1.5rem;
+font-weight: 600;
+color: #f15a3c;
+margin-bottom: 1rem;
 }
 
 .lab-card p {
-    color: #b45309;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+color: #b45309;
+line-height: 1.6;
 }
 
-/* Start Your Own Lab Section */
-.start-lab {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #fbb040 0%, #f15a3c 100%);
-}
-
-.start-lab-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.start-lab-text h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fde68a;
-    margin-bottom: 1.5rem;
-}
-
-.start-lab-text p {
-    font-size: 1.125rem;
-    color: #fbbf24;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-.start-lab-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.idea-bubble {
-    width: 200px;
-    height: 200px;
-    background: #f15a3c;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-.idea-bubble i {
-    font-size: 4rem;
-    color: #fde68a;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-/* Footer */
-.footer {
-    background: #b45309;
-    color: #fff;
-    padding: 60px 0 20px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.footer-section h3,
-.footer-section h4 {
-    margin-bottom: 1rem;
-    color: #fff;
-}
-
-.footer-section p {
-    color: #fbb040;
-    margin-bottom: 1rem;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: #fbb040;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.social-links a {
-    width: 40px;
-    height: 40px;
-    background: #f15a3c;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff7ed;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background: #fbb040;
-    color: #f15a3c;
-}
-
-.footer-bottom {
-    border-top: 1px solid #fff7ed;
-    padding-top: 2rem;
-    text-align: center;
-    color: #fbb040;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .nav-toggle {
-        display: flex;
-    }
-    
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
-    
-    .labs-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .start-lab-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .section-header h2,
-    .start-lab-text h2 {
-        font-size: 2rem;
-    }
-    
-    .hero-graphic {
-        width: 220px;
-        height: 220px;
-    }
-    
-    .floating-card {
-        width: 100px;
-        height: 100px;
-        border-radius: 20px;
-    }
-    
-    .floating-card i {
-        font-size: 1.5rem;
-    }
-    
-    .floating-card .lab-logo {
-        height: 72px;
-        width: 72px;
-    }
-    
-    .card-1 {
-        top: 0px;
-        left: -20px;
-    }
-    .card-2 {
-        top: 90px;
-        right: -20px;
-    }
-    .card-3 {
-        bottom: -10px;
-        left: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.125rem;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .lab-card {
-        padding: 2rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-} 
-
-/* Logo Images */
-.main-logo {
-    height: 48px;
-    width: 48px;
-    object-fit: contain;
-    border-radius: 12px;
-    background: none;
-    margin-right: 0.5rem;
-}
-
+/\* Logo Styles \*/
 .lab-logo {
-    height: 48px;
-    width: 48px;
-    object-fit: contain;
-    border-radius: 12px;
-    background: none;
-    display: block;
-    margin: 0 auto;
+height: 48px;
+width: 48px;
+object-fit: contain;
+border-radius: 12px;
+background: none;
+display: block;
+margin: 0 auto;
 }
 
 .floating-card .lab-logo {
-    height: 130px;
-    width: 130px;
+height: 130px;
+width: 130px;
+background: none;
+filter: none;
+box-shadow: none;
+border-radius: 0;
 }
 
 @media (max-width: 768px) {
-    .main-logo {
-        height: 40px;
-        width: 40px;
-    }
-    .lab-logo {
-        height: 40px;
-        width: 40px;
-    }
-    .floating-card .lab-logo {
-        height: 64px;
-        width: 64px;
-    }
-} 
-
-.nav-links a, .nav-brand {
-    color: #111 !important;
+.hero-container {
+grid-template-columns: 1fr;
+text-align: center;
 }
 
-.nav-links a:hover {
-    color: #f15a3c !important;
-}
-
+```
 .floating-card {
-    background: #fff !important;
-    box-shadow: 0 8px 32px rgba(241, 90, 60, 0.18);
+    width: 100px;
+    height: 100px;
 }
 
 .floating-card .lab-logo {
-    filter: none;
-} 
+    height: 64px;
+    width: 64px;
+}
+```
 
-.hero-typing {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #fff;
-    min-height: 2.5rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.01em;
-    height: 2.5rem;
 }
-#typing-animation {
-    border-right: 6px solid #fff;
-    padding-right: 0;
-    white-space: nowrap;
-    display: inline-block;
-    min-width: 0;
-    height: 3.5rem;
-    vertical-align: bottom;
-    line-height: 3.5rem;
-    box-sizing: border-box;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #111;
-    margin-left: 0;
-} 
-
-.stats-impact {
-    background: linear-gradient(90deg, #fbb040 0%, #f15a3c 100%);
-    padding: 64px 0 48px 0;
-    text-align: center;
-}
-.stats-impact-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 0.5rem;
-}
-.stats-impact-header p {
-    color: #222;
-    font-size: 1.15rem;
-    margin-bottom: 2.5rem;
-}
-.stats-impact-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-}
-.stat-card {
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    padding: 2.5rem 2rem 2rem 2rem;
-    min-width: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.2s;
-}
-.stat-card:hover {
-    transform: translateY(-8px) scale(1.04);
-    box-shadow: 0 8px 32px rgba(241, 90, 60, 0.18);
-}
-.stat-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-.stat-value {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #f15a3c;
-    margin-bottom: 0.5rem;
-}
-.stat-label {
-    color: #111;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-@media (max-width: 900px) {
-    .stats-impact-grid {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .stat-card {
-        min-width: 0;
-        width: 100%;
-    }
-} 
-
-.btn, .btn-lab, .btn-primary, .btn-secondary {
-    transition: all 0.3s cubic-bezier(0.4,0,0.2,1), font-weight 0.18s cubic-bezier(0.4,0,0.2,1);
-}
-.btn:hover, .btn-lab:hover, .btn-primary:hover, .btn-secondary:hover {
-    font-weight: 900;
-} 
-
-.nav-logo .nav-brand {
-    transition: font-weight 0.18s cubic-bezier(0.4,0,0.2,1);
-}
-.nav-logo:hover .nav-brand {
-    font-weight: 900;
-} 
-
-/* Tennis Lab Green Theme */
-.tennis-theme .navbar {
-    background: #1b7f3a !important;
-}
-.tennis-theme .hero,
-.tennis-theme .stats-impact {
-    background: linear-gradient(135deg, #43c06d 0%, #1b7f3a 100%) !important;
-}
-.tennis-theme .btn, .tennis-theme .btn-lab, .tennis-theme .btn-primary {
-    background: #43c06d;
-    color: #fff;
-    border-color: #1b7f3a;
-}
-.tennis-theme .btn:hover, .tennis-theme .btn-lab:hover, .tennis-theme .btn-primary:hover {
-    background: #1b7f3a;
-    color: #fff;
-}
-.tennis-theme .lab-card {
-    background: #43c06d !important;
-    color: #fff !important;
-    border: 1px solid #1b7f3a;
-}
-.tennis-theme .lab-card h3, .tennis-theme .lab-card p {
-    color: #fff !important;
-}
-
-/* Basketball Lab Orange Theme */
-.basketball-theme .navbar {
-    background: #f15a3c !important;
-}
-.basketball-theme .hero,
-.basketball-theme .stats-impact {
-    background: linear-gradient(135deg, #fbb040 0%, #f15a3c 100%) !important;
-}
-.basketball-theme .btn, .basketball-theme .btn-lab, .basketball-theme .btn-primary {
-    background: #f15a3c;
-    color: #fff;
-    border-color: #fbb040;
-}
-.basketball-theme .btn:hover, .basketball-theme .btn-lab:hover, .basketball-theme .btn-primary:hover {
-    background: #fbb040;
-    color: #f15a3c;
-}
-.basketball-theme .lab-card {
-    background: #fbb040 !important;
-    color: #111 !important;
-    border: 1px solid #f15a3c;
-}
-.basketball-theme .lab-card h3, .basketball-theme .lab-card p {
-    color: #111 !important;
-}
-
-/* Code Lab Dark/Gray Theme */
-.code-theme .navbar {
-    background: #222 !important;
-}
-.code-theme .hero,
-.code-theme .stats-impact {
-    background: linear-gradient(135deg, #444 0%, #111 100%) !important;
-}
-.code-theme .btn, .code-theme .btn-lab, .code-theme .btn-primary {
-    background: #222;
-    color: #fff;
-    border-color: #444;
-}
-.code-theme .btn:hover, .code-theme .btn-lab:hover, .code-theme .btn-primary:hover {
-    background: #444;
-    color: #fff;
-}
-.code-theme .lab-card {
-    background: #222 !important;
-    color: #fff !important;
-    border: 1px solid #444;
-}
-.code-theme .lab-card h3, .code-theme .lab-card p {
-    color: #fff !important;
-} 
-
-.logo-box {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    padding: 1.25rem;
-    margin-bottom: 1.5rem;
-} 
-
-.programs-section {
-    background: #f7fafd;
-    padding: 64px 0 48px 0;
-}
-.programs-grid {
-    display: flex;
-    gap: 2.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.program-card {
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    padding: 2.5rem 2rem 2rem 2rem;
-    min-width: 320px;
-    max-width: 400px;
-    flex: 1 1 320px;
-    text-align: left;
-    margin-bottom: 2rem;
-}
-.program-card h3 {
-    color: #222;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-.program-card ul {
-    margin-top: 1.25rem;
-    padding-left: 0;
-    list-style: none;
-}
-.program-card li {
-    margin-bottom: 0.5rem;
-    font-size: 1.08rem;
-    color: #444;
-    display: flex;
-    align-items: center;
-}
-.checkmark {
-    color: #b6e36c;
-    font-size: 1.2rem;
-    margin-right: 0.5rem;
-}
-
-.pricing-section {
-    background: #fff;
-    padding: 64px 0 48px 0;
-}
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    justify-content: center;
-    align-items: stretch;
-    max-width: 900px;
-    margin: 0 auto;
-}
-.pricing-card {
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    padding: 2.5rem 2rem 2rem 2rem;
-    width: 450px;
-    min-width: 450px;
-    max-width: 450px;
-    min-height: 420px;
-    text-align: left;
-    margin-bottom: 2rem;
-    border: 2px solid #b6e36c;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-.pricing-card h3 {
-    color: #222;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-.price {
-    color: #b6e36c;
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-.unit {
-    color: #888;
-    font-size: 1.1rem;
-    font-weight: 400;
-}
-.pricing-card ul {
-    margin-top: 1.25rem;
-    padding-left: 0;
-    list-style: none;
-}
-.pricing-card li {
-    margin-bottom: 0.5rem;
-    font-size: 1.08rem;
-    color: #444;
-    display: flex;
-    align-items: center;
-}
-.pricing-btn {
-    display: block;
-    width: 100%;
-    margin-top: 1.5rem;
-    background: #b6e36c;
-    color: #222;
-    font-weight: 700;
-    border-radius: 10px;
-    padding: 0.9rem 0;
-    font-size: 1.1rem;
-    border: none;
-    text-align: center;
-    transition: background 0.2s, color 0.2s;
-}
-.pricing-btn:hover {
-    background: #222;
-    color: #fff;
-}
-.pricing-card.popular {
-    border: 2px solid #b6e36c;
-}
-.popular-btn {
-    background: #b6e36c;
-    color: #222;
-}
-.pricing-card.best-value {
-    border: 2px solid #b6e36c;
-}
-.best-value-btn {
-    background: #b6e36c;
-    color: #222;
-}
-@media (max-width: 900px) {
-    .programs-grid {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .program-card {
-        min-width: 0;
-        width: 100%;
-    }
-    .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 100%;
-    }
-    .pricing-card {
-        min-width: 0;
-        max-width: 100%;
-        width: 100%;
-        min-height: 0;
-    }
-} 
-
-.tennis-lab-page .hero,
-.tennis-lab-page .programs-section,
-.tennis-lab-page .pricing-section {
-    background: #e6f9ed !important;
-} 
-
-.tennis-lab-page .programs-section {
-    background: #b6e6c7 !important;
-}
-
-.hero-prices-btn {
-    background: #43c06d !important;
-    color: #fff !important;
-    border: none !important;
-    font-weight: 700;
-    transition: background 0.2s, color 0.2s;
-}
-.hero-prices-btn:hover {
-    background: #1b7f3a !important;
-    color: #fff !important;
-}
-.section-divider { display: none !important; }
 
 html {
-    scroll-behavior: smooth;
-} 
-
-.basketball-lab-page .btn,
-.basketball-lab-page .btn-lab,
-.basketball-lab-page .btn-primary,
-.basketball-lab-page .btn-secondary,
-.basketball-lab-page .pricing-btn {
-    background: #f15a3c !important;
-    color: #fff !important;
-    border: none !important;
-    font-weight: 700;
-    transition: background 0.2s, color 0.2s;
+scroll-behavior: smooth;
 }
-.basketball-lab-page .btn:hover,
-.basketball-lab-page .btn-lab:hover,
-.basketball-lab-page .btn-primary:hover,
-.basketball-lab-page .btn-secondary:hover,
-.basketball-lab-page .pricing-btn:hover {
-    background: #b45309 !important;
-    color: #fff !important;
-}
-
-.code-lab-page .btn,
-.code-lab-page .btn-lab,
-.code-lab-page .btn-primary,
-.code-lab-page .btn-secondary,
-.code-lab-page .pricing-btn {
-    background: #444 !important;
-    color: #fff !important;
-    border: none !important;
-    font-weight: 700;
-    transition: background 0.2s, color 0.2s;
-}
-.code-lab-page .btn:hover,
-.code-lab-page .btn-lab:hover,
-.code-lab-page .btn-primary:hover,
-.code-lab-page .btn-secondary:hover,
-.code-lab-page .pricing-btn:hover {
-    background: #222 !important;
-    color: #fff !important;
-} 
-
-.basketball-lab-page .pricing-card {
-    border: 2px solid #f15a3c !important;
-}
-.basketball-lab-page .price {
-    color: #f15a3c !important;
-}
-
-.code-lab-page .pricing-card {
-    border: 2px solid #444 !important;
-}
-.code-lab-page .price {
-    color: #444 !important;
-} 
