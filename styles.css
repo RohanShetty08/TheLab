@@ -741,7 +741,6 @@ body.code-lab-page, .code-lab-page h1, .code-lab-page h2, .code-lab-page h3, .co
 .basketball-theme .btn, .basketball-theme .btn-lab, .basketball-theme .btn-primary {
     background: #f15a3c;
     color: #fff;
-    border-color: #fbb040;
 }
 .basketball-theme .btn:hover, .basketball-theme .btn-lab:hover, .basketball-theme .btn-primary:hover {
     background: #fbb040;
@@ -750,7 +749,6 @@ body.code-lab-page, .code-lab-page h1, .code-lab-page h2, .code-lab-page h3, .co
 .basketball-theme .lab-card {
     background: #fbb040 !important;
     color: #111 !important;
-    border: 1px solid #f15a3c;
 }
 .basketball-theme .lab-card h3, .basketball-theme .lab-card p {
     color: #111 !important;
@@ -767,7 +765,6 @@ body.code-lab-page, .code-lab-page h1, .code-lab-page h2, .code-lab-page h3, .co
 .code-theme .btn, .code-theme .btn-lab, .code-theme .btn-primary {
     background: #222;
     color: #fff;
-    border-color: #444;
 }
 .code-theme .btn:hover, .code-theme .btn-lab:hover, .code-theme .btn-primary:hover {
     background: #444;
@@ -776,7 +773,6 @@ body.code-lab-page, .code-lab-page h1, .code-lab-page h2, .code-lab-page h3, .co
 .code-theme .lab-card {
     background: #222 !important;
     color: #fff !important;
-    border: 1px solid #444;
 }
 .code-theme .lab-card h3, .code-theme .lab-card p {
     color: #fff !important;
