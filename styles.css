@@ -277,8 +277,8 @@ body.code-lab-page, .code-lab-page h1, .code-lab-page h2, .code-lab-page h3, .co
     background: #fff !important;
     color: #111 !important;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    border: 1px solid #eee;
-    border-radius: 20px;
+    border: none;
+    border-radius: none;
     padding: 2.5rem;
     transition: all 0.3s ease;
 }
