@@ -1040,7 +1040,7 @@ html {
 
 .event-image {
   max-width: 10%;
-  height: 100%;
+  height: auto;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   margin-top: 2rem;
