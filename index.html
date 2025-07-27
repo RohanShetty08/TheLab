@@ -154,18 +154,16 @@
     }
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-bottom: 5rem;
     }
     .team-card {
-      background: rgba(255, 102, 0, 0.2);
-      border: 2px solid #fff;
+      background: #fff;
       border-radius: 12px;
       padding: 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       text-align: center;
-      backdrop-filter: blur(4px);
     }
     .team-card h3 {
       font-size: 1.5rem;
@@ -175,12 +173,12 @@
     .team-card h4 {
       font-size: 1.1rem;
       font-weight: 600;
-      color: #fff;
+      color: #666;
       margin-bottom: 0.75rem;
     }
     .team-card p {
       font-size: 1rem;
-      color: #fff;
+      color: #444;
     }
     .logos-section {
       text-align: center;
@@ -195,11 +193,6 @@
       max-width: 900px;
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-    @media (max-width: 768px) {
-      .team-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -237,7 +230,6 @@
   </div>
 </body>
 </html>
-
 
     <!-- Footer -->
 <footer class="footer">
