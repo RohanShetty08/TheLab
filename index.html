@@ -1,309 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Lab - Where mentorship meets passion</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="logo-main.png" alt="The Lab Logo" class="main-logo" />
-                <span class="nav-brand">The Lab</span>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#labs">Labs</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title"><span id="typing-animation"></span></h1>
-                <p class="hero-subtitle">The Lab empowers students to lead, teach, and grow their communities — one lab at a time.</p>
-                <div class="hero-buttons">
-                    <a href="#labs" class="btn btn-primary">Explore Labs</a>
-                    <a href="#start-lab" class="btn btn-secondary">Start Your Own Lab</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-graphic">
-                    <div class="floating-card card-1">
-                        <img src="logo-tennis.png" alt="Tennis Lab Logo" class="lab-logo" />
-                    </div>
-                    <div class="floating-card card-2">
-                        <img src="logo-code.png" alt="Coding Lab Logo" class="lab-logo" />
-                    </div>
-                    <div class="floating-card card-3">
-                        <img src="logo-basketball.png" alt="Basketball Lab Logo" class="lab-logo" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="upcoming-events" id="upcoming-events">
-  <div class="container">
-    <div class="section-header">
-      <h2>Upcoming Events</h2>
-      <p>Join us at one of our exciting community events!</p>
-    </div>
-    <div class="event-flyer">
-      <img src="3v3-flyer.png" alt="3v3 Basketball Tournament Flyer" class="event-image">
-    </div>
-  </div>
-</section>
-
-
-    <!-- Labs Section -->
-    <section id="labs" class="labs">
-        <div class="container">
-            <div class="section-header">
-                <h2>Discover Our Labs</h2>
-                <p>Join a community of passionate mentors and learners</p>
-            </div>
-            <div class="labs-grid">
-                <div class="lab-card tennis-lab">
-                    <div class="lab-icon">
-                        <img src="logo-tennis.png" alt="Tennis Lab Logo" class="lab-logo" />
-                    </div>
-                    <h3>Tennis Lab</h3>
-                    <p>Master the fundamentals of tennis while building leadership skills. Perfect for both beginners and advanced players looking to mentor others.</p>
-                    <a href="tennis-lab.html" class="btn btn-lab">Explore Tennis Lab</a>
-                </div>
-                
-                <div class="lab-card coding-lab">
-                    <div class="lab-icon">
-                        <img src="logo-code.png" alt="Coding Lab Logo" class="lab-logo" />
-                    </div>
-                    <h3>Coding Lab</h3>
-                    <p>Learn programming, web development, and problem-solving skills. Create amazing projects while teaching others the power of technology.</p>
-                    <a href="coding-lab.html" class="btn btn-lab">Explore Coding Lab</a>
-                </div>
-                
-                <div class="lab-card basketball-lab">
-                    <div class="lab-icon">
-                        <img src="logo-basketball.png" alt="Basketball Lab Logo" class="lab-logo" />
-                    </div>
-                    <h3>Basketball Lab</h3>
-                    <p>Develop basketball skills, teamwork, and sportsmanship. Whether you're a player or coach, there's a place for you in our welcoming and energetic basketball community.</p>
-                    <a href="basketball-lab.html" class="btn btn-lab">Explore Basketball Lab</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Start Your Own Lab Section -->
-    <section id="start-lab" class="start-lab">
-        <div class="container">
-            <div class="start-lab-content">
-                <div class="start-lab-text">
-                    <h2>Start Your Own Lab</h2>
-                    <p>Have a passion you want to share? Create your own lab and inspire the next generation of learners. Whether it's art, music, science, or any other interest, we'll help you build a community around what you love.</p>
-                    <a href="#" class="btn btn-primary">Get Started</a>
-                </div>
-                <div class="start-lab-visual">
-                    <div class="idea-bubble">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Lab</title>
+  <title>The Lab - Where Mentorship Meets Passion</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8f8f8;
-      margin: 0;
-      padding: 0;
-      color: #222;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 1rem;
-    }
-    h1, h2 {
-      text-align: center;
-      font-size: 2.75rem;
-      font-weight: 800;
-      margin-bottom: 3rem;
-    }
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-bottom: 5rem;
-    }
-    .team-card {
-      background: rgba(255, 102, 0, 0.2);
-      border: 2px solid #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: center;
-      backdrop-filter: blur(4px);
-    }
-    .team-card h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .team-card h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.75rem;
-    }
-    .team-card p {
-      font-size: 1rem;
-      color: #fff;
-    }
-    .logos-section {
-      text-align: center;
-    }
-    .logos-section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-    }
-    .logos-section img {
-      width: 100%;
-      max-width: 900px;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-    @media (max-width: 768px) {
-      .team-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="container" id="about">
-    <h1>Meet the Co-Founders</h1>
-
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="profile-circle">
-          <img src="arjun.jpg" alt="Arjun Viswanathan">
-        </div>
-        <h3>Arjun Viswanathan</h3>
-        <h4>Co-Founder & COO</h4>
-        <p>Arjun leads partnerships, sponsorships, and community relationships for The Lab with a sharp focus on opportunity creation.</p>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="logo-main.png" alt="The Lab Logo" class="main-logo" />
+        <span class="nav-brand">The Lab</span>
       </div>
-      <div class="team-card">
-        <div class="profile-circle">
-          <img src="vedanth.jpg" alt="Vedanth Chamala">
-        </div>
-        <h3>Vedanth Chamala</h3>
-        <h4>Co-Founder & CTO</h4>
-        <p>Vedanth heads all things AI and technical architecture across our Labs, building strong systems for student-led mentorship.</p>
-      </div>
-      <div class="team-card">
-        <div class="profile-circle">
-          <img src="rohan.jpg" alt="Rohan Shetty">
-        </div>
-        <h3>Rohan Shetty</h3>
-        <h4>Co-Founder & CTO</h4>
-        <p>Rohan specializes in product deployment and engineering logic, supporting both The Lab’s backend and frontend systems.</p>
-      </div>
-      <div class="team-card">
-        <div class="profile-circle">
-          <img src="cyril.jpg" alt="Cyril Sudepally">
-        </div>
-        <h3>Cyril Sudepally</h3>
-        <h4>Co-Founder & CEO</h4>
-        <p>Cyril drives vision, execution, and leadership for The Lab, empowering youth to take ownership of their learning journeys.</p>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#labs">Labs</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
+  </nav>
 
-    <div class="logos-section">
-      <h2>Who Trusts Us</h2>
-      <img src="credibility-logos.png" alt="Credibility Logos">
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div style="text-align: left; width: 100%;">
+          <h1 class="hero-title"><span id="typing-animation"></span></h1>
+        </div>
+        <p class="hero-subtitle">The Lab empowers students to lead, teach, and grow their communities — one lab at a time.</p>
+        <div class="hero-buttons">
+          <a href="#labs" class="btn btn-primary">Explore Labs</a>
+          <a href="#start-lab" class="btn btn-secondary">Start Your Own Lab</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-graphic">
+          <div class="floating-card card-1">
+            <img src="logo-tennis.png" alt="Tennis Lab Logo" class="lab-logo" />
+          </div>
+          <div class="floating-card card-2">
+            <img src="logo-code.png" alt="Coding Lab Logo" class="lab-logo" />
+          </div>
+          <div class="floating-card card-3">
+            <img src="logo-basketball.png" alt="Basketball Lab Logo" class="lab-logo" />
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
+  </section>
 
-    <div class="logos-section">
-      <h2>Who Trusts Us</h2>
-      <img src="credibility-logos.png" alt="Credibility Logos">
+  <!-- Upcoming Events -->
+  <section class="upcoming-events" id="upcoming-events">
+    <div class="container">
+      <div class="section-header">
+        <h2>Upcoming Events</h2>
+        <p>Join us at one of our exciting community events!</p>
+      </div>
+      <div class="event-flyer">
+        <img src="3v3-flyer.png" alt="3v3 Basketball Tournament Flyer" class="event-image">
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Labs Section -->
+  <section id="labs" class="labs">
+    <div class="container">
+      <div class="section-header">
+        <h2>Discover Our Labs</h2>
+        <p>Join a community of passionate mentors and learners</p>
+      </div>
+      <div class="labs-grid">
+        <div class="lab-card tennis-lab">
+          <div class="lab-icon">
+            <img src="logo-tennis.png" alt="Tennis Lab Logo" class="lab-logo" />
+          </div>
+          <h3>Tennis Lab</h3>
+          <p>Master the fundamentals of tennis while building leadership skills. Perfect for both beginners and advanced players looking to mentor others.</p>
+          <a href="tennis-lab.html" class="btn btn-lab">Explore Tennis Lab</a>
+        </div>
+
+        <div class="lab-card coding-lab">
+          <div class="lab-icon">
+            <img src="logo-code.png" alt="Coding Lab Logo" class="lab-logo" />
+          </div>
+          <h3>Coding Lab</h3>
+          <p>Learn programming, web development, and problem-solving skills. Create amazing projects while teaching others the power of technology.</p>
+          <a href="coding-lab.html" class="btn btn-lab">Explore Coding Lab</a>
+        </div>
+
+        <div class="lab-card basketball-lab">
+          <div class="lab-icon">
+            <img src="logo-basketball.png" alt="Basketball Lab Logo" class="lab-logo" />
+          </div>
+          <h3>Basketball Lab</h3>
+          <p>Develop basketball skills, teamwork, and sportsmanship. Whether you're a player or coach, there's a place for you in our welcoming and energetic basketball community.</p>
+          <a href="basketball-lab.html" class="btn btn-lab">Explore Basketball Lab</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start Lab Section -->
+  <section id="start-lab" class="start-lab">
+    <div class="container">
+      <div class="start-lab-content">
+        <div class="start-lab-text">
+          <h2>Start Your Own Lab</h2>
+          <p>Have a passion you want to share? Create your own lab and inspire the next generation of learners. Whether it's art, music, science, or any other interest, we'll help you build a community around what you love.</p>
+          <a href="#" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="start-lab-visual">
+          <div class="idea-bubble">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>The Lab</h3>
+          <p>Empowering students to lead, teach, and grow their communities.</p>
+          <p style="font-style: italic;">Mentorship That Fuels Lifelong Passion</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#labs">Labs</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Our Labs</h4>
+          <ul>
+            <li><a href="#">Tennis Lab</a></li>
+            <li><a href="#">Coding Lab</a></li>
+            <li><a href="#">Basketball Lab</a></li>
+            <li><a href="#">Start Your Own</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>contact@thelabtx.org</p>
+          <p>Built by students, for students.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 The Lab. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-    <!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>The Lab</h3>
-                <p>Empowering students to lead, teach, and grow their communities.</p>
-                <p style="font-style: italic;">Mentorship That Fuels Lifelong Passion</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#labs">Labs</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Our Labs</h4>
-                <ul>
-                    <li><a href="#">Tennis Lab</a></li>
-                    <li><a href="#">Coding Lab</a></li>
-                    <li><a href="#">Basketball Lab</a></li>
-                    <li><a href="#">Start Your Own</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <p>contact@thelabtx.org</p>
-                <p>Built by students, for students.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 The Lab. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
-
-    <script src="script.js"></script>
-</body>
-</html> 
