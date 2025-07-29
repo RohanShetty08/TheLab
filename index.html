@@ -158,7 +158,9 @@
 <!-- Our Background Section -->
 <section id="background" class="background-section">
   <div class="container">
-    <h2 class="section-header background-title">Our Background</h2>
+    <div class="background-header-wrapper">
+      <h2 class="section-header background-title">Our Background</h2>
+    </div>
     <div class="logo-carousel">
       <div class="logo-track">
         <img src="logo_row_1.png" alt="Row 1 Logos" class="carousel-logo" />
@@ -234,10 +236,17 @@
     background: #fdf8f3;
     padding: 4rem 1rem;
   }
+  .background-header-wrapper {
+    display: inline-block;
+    background: linear-gradient(135deg, #f15a3c 0%, #fbb040 100%);
+    padding: 0.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
   .background-title {
     font-size: 4rem;
-    color: #000000;
-    margin-bottom: 2rem;
+    color: black;
+    margin: 0;
   }
   .logo-carousel {
     overflow: hidden;
@@ -247,10 +256,10 @@
   }
   .logo-track {
     display: flex;
-    animation: scroll 10s linear infinite;
+    animation: scroll 6s linear infinite;
   }
   .carousel-logo {
-    height: 300px;
+    height: 320px;
     margin: 0;
     flex-shrink: 0;
   }
