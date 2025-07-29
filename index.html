@@ -123,7 +123,6 @@
     </div>
   </section>
 <!-- About Section -->
-<!-- About Section -->
 <section id="about" class="about-section">
   <div class="container">
     <h2 class="section-header">Meet the Team</h2>
@@ -155,7 +154,12 @@
     </div>
     <div class="logos-section">
       <h2>Our Background</h2>
-      <img src="Logos.png" alt="Credibility Logos" class="static-logos">
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="Logos.png" alt="Credibility Logos">
+          <img src="Logos.png" alt="Credibility Logos Duplicate">
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -211,11 +215,28 @@
     text-align: center;
     margin-top: 4rem;
   }
-  .static-logos {
-    max-width: 900px;
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+  }
+  .carousel-track {
+    display: flex;
+    width: calc(200%);
+    animation: scroll-logos 20s linear infinite;
+  }
+  .carousel-track img {
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+  }
+  @keyframes scroll-logos {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 </style>
 
