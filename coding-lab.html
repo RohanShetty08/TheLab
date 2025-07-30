@@ -110,41 +110,130 @@
 
 <!-- Python Lab Breakdown Calendar Section -->
 <section class="calendar-section" style="background:#f4f4f4; padding:4rem 1rem;">
-  <div class="container" style="max-width:960px; margin:0 auto;">
+  <div class="container" style="max-width:1000px; margin:0 auto;">
     <h2 class="section-header" style="font-size:2.75rem; font-weight:800; text-align:center; color:#222; margin-bottom:2rem;">Python Lab Breakdown</h2>
-
-    <div style="
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      font-family: 'Inter', sans-serif;
-    ">
-      <!-- Day Headers -->
-      <div style="background:#000; color:#fff; padding:1rem; font-weight:600; text-align:center;">Sun</div>
-      <div style="background:#000; color:#fff; padding:1rem; font-weight:600; text-align:center;">Mon</div>
-      <div style="background:#000; color:#fff; padding:1rem; font-weight:600; text-align:center;">Tue</div>
-      <div style="background:#000; color:#fff; padding:1rem; font-weight:600; text-align:center;">Wed</div>
-      <div style="background:#000; color:#fff; padding:1rem; font-weight:600; text-align:center;">Thu</div>
-      <div style="background:#000; color:#fff; padding:1rem; font-weight:600; text-align:center;">Fri</div>
-      <div style="background:#000; color:#fff; padding:1rem; font-weight:600; text-align:center;">Sat</div>
-
-      <!-- Calendar Events Row -->
-      <div style="background:#fff; height:80px;"></div>
-      <div style="background:#f15a3c; color:#fff; height:80px; display:flex; align-items:center; justify-content:center; font-weight:600;">5–6 PM</div>
-      <div style="background:#fff; height:80px;"></div>
-      <div style="background:#f15a3c; color:#fff; height:80px; display:flex; align-items:center; justify-content:center; font-weight:600;">5–6 PM</div>
-      <div style="background:#fff; height:80px;"></div>
-      <div style="background:#f15a3c; color:#fff; height:80px; display:flex; align-items:center; justify-content:center; font-weight:600;">5–6 PM</div>
-      <div style="background:#fff; height:80px;"></div>
+    <div class="calendar-grid" style="display:grid; grid-template-columns:repeat(7, 1fr); gap:1rem; text-align:center;">
+      <div class="calendar-day">
+        <h4 style="margin-bottom:0.5rem; font-size:1.25rem;">Sunday</h4>
+        <div style="height:80px; background:#ccc; border-radius:8px;"></div>
+      </div>
+      <div class="calendar-day">
+        <h4 style="margin-bottom:0.5rem; font-size:1.25rem;">Monday</h4>
+        <div style="height:80px; background:#666; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:8px; font-weight:600;">5–6 PM</div>
+      </div>
+      <div class="calendar-day">
+        <h4 style="margin-bottom:0.5rem; font-size:1.25rem;">Tuesday</h4>
+        <div style="height:80px; background:#ccc; border-radius:8px;"></div>
+      </div>
+      <div class="calendar-day">
+        <h4 style="margin-bottom:0.5rem; font-size:1.25rem;">Wednesday</h4>
+        <div style="height:80px; background:#666; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:8px; font-weight:600;">5–6 PM</div>
+      </div>
+      <div class="calendar-day">
+        <h4 style="margin-bottom:0.5rem; font-size:1.25rem;">Thursday</h4>
+        <div style="height:80px; background:#ccc; border-radius:8px;"></div>
+      </div>
+      <div class="calendar-day">
+        <h4 style="margin-bottom:0.5rem; font-size:1.25rem;">Friday</h4>
+        <div style="height:80px; background:#666; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:8px; font-weight:600;">5–6 PM</div>
+      </div>
+      <div class="calendar-day">
+        <h4 style="margin-bottom:0.5rem; font-size:1.25rem;">Saturday</h4>
+        <div style="height:80px; background:#ccc; border-radius:8px;"></div>
+      </div>
     </div>
-
-    <p style="text-align:center; margin-top:1.25rem; color:#666;">August 18 – October 3</p>
+    <p style="text-align:center; margin-top:1rem; color:#666;">August 18 – October 3</p>
   </div>
 </section>
 
+<style>
+  .about-section {
+    background: linear-gradient(135deg, #f15a3c 0%, #fbb040 100%);
+    padding: 5rem 1rem;
+  }
+  .team-title {
+    font-size: 3.2rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .team-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    color: white;
+  }
+  .team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  .profile-circle {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+  }
+  .team-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .team-card h4 {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .team-card p {
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .background-section {
+    text-align: center;
+    background: linear-gradient(135deg, #f15a3c 0%, #fbb040 100%);
+    padding: 2rem 1rem;
+  }
+  .background-title {
+    font-size: 4rem;
+    color: #000;
+    margin: 0;
+  }
+  .logo-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+  .logo-track {
+    display: flex;
+    gap: 4rem;
+    width: calc(400%);
+    animation: scroll 35s linear infinite;
+  }
+  .carousel-logo {
+    height: 120px;
+    flex-shrink: 0;
+    background: #fdf8f3;
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
 
 
 <footer class="footer" style="background:#222; color:#fff; padding:2rem 0;">
