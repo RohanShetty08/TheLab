@@ -14,36 +14,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
-      margin-top: 1rem;
+      gap: 3rem;
+      margin-top: 3rem;
     }
-    .hero-logo-bg {
-      position: relative;
-    }
-    .hero-logo-bg img.corner-logo {
-      position: absolute;
-      width: 220px;
-      opacity: 0.6;
-      transform: rotate(-15deg);
-    }
-    .hero-logo-bg img.corner-logo.left {
-      bottom: 10px;
-      left: 10px;
-      transform: rotate(-15deg);
-    }
-    .hero-logo-bg img.corner-logo.right {
-      bottom: 10px;
-      right: 10px;
-      transform: rotate(15deg);
+    .credibility-logos img {
+      height: 100px;
+      opacity: 0.9;
+      transform: rotate(-5deg);
     }
   </style>
 </head>
 <body class="coding-lab-page">
-
-  <div class="credibility-logos">
-    <img src="logo_1.png" alt="Harvard Crimson Logo" style="height:60px; object-fit:contain;">
-    <img src="logo_2.png" alt="UT Austin Logo" style="height:60px; object-fit:contain;">
-  </div>
 
   <nav class="navbar">
     <div class="nav-container">
@@ -60,10 +41,6 @@
   </nav>
 
 <section class="hero" style="background:#f4f4f6; padding-top:120px; position:relative;">
-  <div class="hero-logo-bg">
-    <img src="logo_1.png" alt="Harvard" class="corner-logo left">
-    <img src="logo_2.png" alt="UT Austin" class="corner-logo right">
-  </div>
   <div class="container" style="text-align:center;">
     <div class="logo-box">
       <img src="logo-code.png" alt="Coding Lab Logo" style="height:100px;width:100px;" />
@@ -82,8 +59,14 @@
   box-shadow:0 4px 10px rgba(0,0,0,0.05);
   transition:background 0.3s ease;
 ">View Pricing</a>
+
+    <div class="credibility-logos">
+      <img src="logo_1.png" alt="Harvard Crimson Logo">
+      <img src="logo_2.png" alt="UT Austin Logo">
+    </div>
   </div>
 </section>
+
 <section class="pricing-section" id="pricing" style="background:#f4f4f6; padding:64px 0 120px 0;">
   <div class="container" style="max-width:1100px; margin:0 auto; padding:0 1rem;">
     <h2 class="section-header" style="text-align:center; color:#222; font-size:2.75rem; font-weight:800; margin-bottom:3rem;">Pricing Plan</h2>
