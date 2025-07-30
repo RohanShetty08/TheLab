@@ -14,13 +14,24 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
-      margin-top: 4rem;
+      gap: 6rem;
+      margin-top: 3rem;
     }
     .credibility-logos img {
-      height: 120px;
+      height: 150px;
       opacity: 1;
       transform: rotate(-5deg);
+    }
+    .credibility-text {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #444;
+    }
+    .credibility-text span {
+      display: inline-block;
+      transform: rotate(-3deg);
     }
   </style>
 </head>
@@ -60,12 +71,16 @@
   transition:background 0.3s ease;
 ">View Pricing</a>
 
+    <div class="credibility-text">
+      <span>&larr; Our mentors are backed by &rarr;</span>
+    </div>
     <div class="credibility-logos">
       <img src="logo_1.png" alt="Harvard Crimson Logo">
       <img src="logo_2.png" alt="UT Austin Logo">
     </div>
   </div>
 </section>
+
 <section class="pricing-section" id="pricing" style="background:#f4f4f6; padding:64px 0 120px 0;">
   <div class="container" style="max-width:1100px; margin:0 auto; padding:0 1rem;">
     <h2 class="section-header" style="text-align:center; color:#222; font-size:2.75rem; font-weight:800; margin-bottom:3rem;">Pricing Plan</h2>
