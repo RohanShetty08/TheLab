@@ -11,24 +11,33 @@
       color: #000 !important;
     }
     .credibility-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      background: #fff;
+      position: relative;
     }
-    .credibility-logos img {
-      height: 40px;
-      object-fit: contain;
+    .hero-logo-bg {
+      position: relative;
+    }
+    .hero-logo-bg img.corner-logo {
+      position: absolute;
+      width: 150px;
+      opacity: 0.15;
+      transform: rotate(-15deg);
+    }
+    .hero-logo-bg img.corner-logo.left {
+      bottom: -20px;
+      left: -20px;
+    }
+    .hero-logo-bg img.corner-logo.right {
+      bottom: -20px;
+      right: -20px;
+      transform: rotate(15deg);
     }
   </style>
 </head>
 <body class="coding-lab-page">
-  <!-- Credibility Logos Section -->
+
   <div class="credibility-logos">
-    <img src="logo_1.png" alt="Harvard Crimson Logo">
-    <img src="logo_2.png" alt="UT Austin Logo">
+    <img src="logo_1.png" alt="Harvard Crimson Logo" style="height:40px; object-fit:contain;">
+    <img src="logo_2.png" alt="UT Austin Logo" style="height:40px; object-fit:contain;">
   </div>
 
   <nav class="navbar">
@@ -45,7 +54,11 @@
     </div>
   </nav>
 
-<section class="hero" style="background:#f4f4f6; padding-top:120px;">
+<section class="hero" style="background:#f4f4f6; padding-top:120px; position:relative;">
+  <div class="hero-logo-bg">
+    <img src="logo_1.png" alt="Harvard" class="corner-logo left">
+    <img src="logo_2.png" alt="UT Austin" class="corner-logo right">
+  </div>
   <div class="container" style="text-align:center;">
     <div class="logo-box">
       <img src="logo-code.png" alt="Coding Lab Logo" style="height:100px;width:100px;" />
