@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - The Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-bg': '#0A0A0A',
+                        'dark-surface': '#1A1A1A',
+                        'charcoal': '#E2E8F0',
+                        'glow-red': '#FF5A5F',
+                        'glow-orange': '#FF9500',
+                        'glow-yellow': '#FFD740',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
+                        'gradient-glow': 'linear-gradient(135deg, #FF5A5F 0%, #FF9500 50%, #FFD740 100%)',
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(255, 90, 95, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(255, 149, 0, 0.8), 0 0 40px rgba(255, 215, 64, 0.6)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #E2E8F0;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF9500 50%, #FFD740 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-border {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF9500 50%, #FFD740 100%);
+            padding: 1px;
+            border-radius: 8px;
+        }
+        
+        .gradient-border > * {
+            background: #0A0A0A;
+            border-radius: 7px;
+        }
+        
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .radial-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(255, 149, 0, 0.1) 0%, rgba(255, 90, 95, 0.05) 50%, transparent 100%);
+        }
+        
+        .flask-logo {
+            filter: drop-shadow(0 0 10px rgba(255, 149, 0, 0.5));
+        }
+        
+        .hover-glow:hover {
+            filter: drop-shadow(0 0 15px rgba(255, 149, 0, 0.8));
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        body {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        button, a, .hover-glow, .gradient-border, .flask-logo {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        #navbar {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .animate-float {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .lab-title-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .lab-title-hover:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 10px rgba(255, 149, 0, 0.6));
+        }
+        
+        .nav-link-glow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF9500 50%, #FFD740 100%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+            border-radius: 8px;
+            filter: blur(8px);
+        }
+        
+        .nav-link-glow:active::before {
+            opacity: 1;
+            transform: scale(1.5);
+            filter: blur(12px);
+        }
+        
+        .nav-link-glow:active {
+            transform: scale(1.1);
+            text-shadow: 0 0 20px rgba(255, 149, 0, 0.8);
+            filter: drop-shadow(0 0 15px rgba(255, 90, 95, 0.6));
+        }
+        
+        /* Unified Page Transition Animation */
+        .page-transition {
+            animation: unifiedPageEnter 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        @keyframes unifiedPageEnter {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.92);
+                filter: blur(15px);
+            }
+            20% {
+                opacity: 0.3;
+                transform: translateY(25px) scale(0.96);
+                filter: blur(8px);
+            }
+            40% {
+                opacity: 0.6;
+                transform: translateY(15px) scale(0.98);
+                filter: blur(4px);
+            }
+            60% {
+                opacity: 0.8;
+                transform: translateY(8px) scale(0.99);
+                filter: blur(2px);
+            }
+            80% {
+                opacity: 0.95;
+                transform: translateY(3px) scale(0.995);
+                filter: blur(1px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+        
+        .page-exit {
+            animation: unifiedPageExit 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        @keyframes unifiedPageExit {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-40px) scale(0.92);
+                filter: blur(15px);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-dark-bg text-gray-100 min-h-screen page-transition">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-4xl sm:max-w-5xl md:max-w-6xl lg:max-w-7xl xl:max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center -ml-8">
+                    <a href="assets/index.html">
+                        <img src="assets/lab-flask-logo.png" alt="The Lab Flask Logo" class="w-15 h-16 flask-logo hover-glow cursor-pointer">
+                    </a>
+                    <a href="assets/index.html" class="ml-3 text-2xl font-bold gradient-text lab-title-hover">The Lab</a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="text-orange-400 font-medium nav-link-glow px-3 py-2 rounded-lg">About</a>
+                    <a href="labs.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200 font-medium nav-link-glow px-3 py-2 rounded-lg">Labs</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200 font-medium nav-link-glow px-3 py-2 rounded-lg">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="gradient-border">
+                    <button class="px-6 py-2 font-semibold text-gray-100 hover:text-orange-400 transition-colors duration-200">
+                        Enroll Now
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-300 hover:text-orange-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <!-- Background radial glow -->
+        <div class="absolute inset-0 radial-glow"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Glowing Badge -->
+            <div class="inline-block mb-8">
+                <div class="gradient-border animate-glow">
+                    <span class="px-4 py-2 text-xs font-semibold tracking-wider text-gray-100 uppercase">
+                        Student Led
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Main Headline -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+                <span class="gradient-text">Mentorship That Fuels Lifelong Passion</span>
+            </h1>
+            
+            <!-- Subheadline -->
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                The Lab is a student-led mentorship collective. We bring 'older-sibling energy' to learning—meeting students where they are, building confidence first, and then skills. Think of us as your virtual Community Activity Center (CAC): a welcoming place to explore interests, find mentors, and ship real projects.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="px-8 py-4 font-semibold text-white bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 hover:from-red-600 hover:via-orange-600 hover:to-yellow-600 transition-all duration-300 rounded-lg hover-glow">
+                    Join a Lab
+                </button>
+                
+                <button class="gradient-border hover-glow group">
+                    <div class="px-8 py-4 font-semibold text-gray-100 group-hover:text-orange-400 transition-colors duration-200">
+                        See How It Works
+                    </div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Floating elements for visual interest -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full opacity-40 animate-float"></div>
+        <div class="absolute top-40 right-20 w-6 h-6 bg-orange-400 rounded-full opacity-30 animate-float" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-40 left-20 w-3 h-3 bg-red-400 rounded-full opacity-35 animate-float" style="animation-delay: 2s;"></div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Left Column - How We Mentor -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-8 gradient-text">How We Mentor</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-gradient-to-br from-red-400 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-100 mb-2">Student-Led, Mission-Driven</h3>
+                                <p class="text-gray-300">Near-peer mentors who remember what it's like to be new.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-gradient-to-br from-orange-400 to-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-100 mb-2">Project-First Learning</h3>
+                                <p class="text-gray-300">Every learner builds something tangible.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-gradient-to-br from-yellow-400 to-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-100 mb-2">Confidence → Competence</h3>
+                                <p class="text-gray-300">We start with wins, then layer in rigor.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-gradient-to-br from-red-400 to-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-100 mb-2">Community & Accountability</h3>
+                                <p class="text-gray-300">Standups, showcases, and parent updates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - What You Can Expect -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-8 gradient-text">What You Can Expect</h2>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="text-gray-300">Small groups with individual attention</span>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="text-gray-300">Clear weekly goals and progress tracking</span>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="text-gray-300">Portfolio-ready outputs and demos</span>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-red-500 to-yellow-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                            <span class="text-gray-300">Optional competitions, showcases, and community events</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Soft divider -->
+            <div class="w-24 h-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 mx-auto mb-12 rounded-full"></div>
+            
+            <!-- Stats strip -->
+            <div class="text-center">
+                <div class="text-2xl font-bold gradient-text">
+                    Active Labs • Real Projects • Near-Peer Mentors
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-blur');
+            } else {
+                navbar.classList.remove('navbar-blur');
+            }
+        });
+    </script>
+</body>
+</html> 
