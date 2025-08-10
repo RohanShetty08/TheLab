@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labs - The Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-bg': '#0A0A0A',
+                        'dark-surface': '#1A1A1A',
+                        'charcoal': '#E2E8F0',
+                        'glow-red': '#FF5A5F',
+                        'glow-orange': '#FF9500',
+                        'glow-yellow': '#FFD740',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
+                        'gradient-glow': 'linear-gradient(135deg, #FF5A5F 0%, #FF9500 50%, #FFD740 100%)',
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(255, 90, 95, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(255, 149, 0, 0.8), 0 0 40px rgba(255, 215, 64, 0.6)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #E2E8F0;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF9500 50%, #FFD740 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-border {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF9500 50%, #FFD740 100%);
+            padding: 1px;
+            border-radius: 8px;
+        }
+        
+        .gradient-border > * {
+            background: #0A0A0A;
+            border-radius: 7px;
+        }
+        
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .radial-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(255, 149, 0, 0.1) 0%, rgba(255, 90, 95, 0.05) 50%, transparent 100%);
+        }
+        
+        .flask-logo {
+            filter: drop-shadow(0 0 10px rgba(255, 149, 0, 0.5));
+        }
+        
+        .hover-glow:hover {
+            filter: drop-shadow(0 0 15px rgba(255, 149, 0, 0.8));
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        body {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        button, a, .hover-glow, .gradient-border, .flask-logo {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        #navbar {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .animate-float {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .lab-title-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .lab-title-hover:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 10px rgba(255, 149, 0, 0.6));
+        }
+        
+        .nav-link-glow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF9500 50%, #FFD740 100%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+            border-radius: 8px;
+            filter: blur(8px);
+        }
+        
+        .nav-link-glow:active::before {
+            opacity: 1;
+            transform: scale(1.5);
+            filter: blur(12px);
+        }
+        
+        .nav-link-glow:active {
+            transform: scale(1.1);
+            text-shadow: 0 0 20px rgba(255, 149, 0, 0.8);
+            filter: drop-shadow(0 0 15px rgba(255, 90, 95, 0.6));
+        }
+        
+        /* Unified Page Transition Animation */
+        .page-transition {
+            animation: unifiedPageEnter 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        @keyframes unifiedPageEnter {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.92);
+                filter: blur(15px);
+            }
+            20% {
+                opacity: 0.3;
+                transform: translateY(25px) scale(0.96);
+                filter: blur(8px);
+            }
+            40% {
+                opacity: 0.6;
+                transform: translateY(15px) scale(0.98);
+                filter: blur(4px);
+            }
+            60% {
+                opacity: 0.8;
+                transform: translateY(8px) scale(0.99);
+                filter: blur(2px);
+            }
+            80% {
+                opacity: 0.95;
+                transform: translateY(3px) scale(0.995);
+                filter: blur(1px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+        
+        .page-exit {
+            animation: unifiedPageExit 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        @keyframes unifiedPageExit {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-40px) scale(0.92);
+                filter: blur(15px);
+            }
+        }
+        
+        .filter-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .filter-tab.active {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF9500 50%, #FFD740 100%);
+            color: white;
+        }
+        
+        .lab-card {
+            transition: all 0.3s ease;
+        }
+        
+        .lab-card.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-inter bg-dark-bg text-gray-100 min-h-screen page-transition">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-4xl sm:max-w-5xl md:max-w-6xl lg:max-w-7xl xl:max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center -ml-8">
+                    <a href="assets/index.html">
+                        <img src="assets/lab-flask-logo.png" alt="The Lab Flask Logo" class="w-15 h-16 flask-logo hover-glow cursor-pointer">
+                    </a>
+                    <a href="assets/index.html" class="ml-3 text-2xl font-bold gradient-text lab-title-hover">The Lab</a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200 font-medium nav-link-glow px-3 py-2 rounded-lg">About</a>
+                    <a href="labs.html" class="text-orange-400 font-medium nav-link-glow px-3 py-2 rounded-lg">Labs</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200 font-medium nav-link-glow px-3 py-2 rounded-lg">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="gradient-border">
+                    <button class="px-6 py-2 font-semibold text-gray-100 hover:text-orange-400 transition-colors duration-200">
+                        Enroll Now
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-300 hover:text-orange-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <!-- Background radial glow -->
+        <div class="absolute inset-0 radial-glow"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Glowing Badge -->
+            <div class="inline-block mb-8">
+                <div class="gradient-border animate-glow">
+                    <span class="px-4 py-2 text-xs font-semibold tracking-wider text-gray-100 uppercase">
+                        Our Programs
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Main Headline -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+                <span class="gradient-text">Choose Your Lab</span>
+            </h1>
+            
+            <!-- Subheadline -->
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+                From coding to sports, music to robotics—find the perfect program to develop your skills and leadership potential.
+            </p>
+        </div>
+        
+        <!-- Floating elements for visual interest -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full opacity-40 animate-float"></div>
+        <div class="absolute top-40 right-20 w-6 h-6 bg-orange-400 rounded-full opacity-30 animate-float" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-40 left-20 w-3 h-3 bg-red-400 rounded-full opacity-35 animate-float" style="animation-delay: 2s;"></div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="py-8 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-tab active px-6 py-3 rounded-lg font-medium text-gray-300 hover:text-white border border-gray-700 hover:border-orange-400" data-filter="all">
+                    All
+                </button>
+                <button class="filter-tab px-6 py-3 rounded-lg font-medium text-gray-300 hover:text-white border border-gray-700 hover:border-orange-400" data-filter="tech">
+                    Tech
+                </button>
+                <button class="filter-tab px-6 py-3 rounded-lg font-medium text-gray-300 hover:text-white border border-gray-700 hover:border-orange-400" data-filter="sports">
+                    Sports
+                </button>
+                <button class="filter-tab px-6 py-3 rounded-lg font-medium text-gray-300 hover:text-white border border-gray-700 hover:border-orange-400" data-filter="arts">
+                    Arts
+                </button>
+                <button class="filter-tab px-6 py-3 rounded-lg font-medium text-gray-300 hover:text-white border border-gray-700 hover:border-orange-400" data-filter="leadership">
+                    Leadership
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Labs Grid -->
+    <section class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Coding Lab -->
+                <div class="lab-card bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 hover-glow border border-gray-800/50" data-category="tech">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-400 to-orange-500 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-full">All Levels</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">The Coding Lab</h3>
+                    <p class="text-gray-300 mb-6">Learn programming by building from day one. We mix fundamentals with a portfolio project so you actually ship.</p>
+                    <div class="mb-8">
+                        <h4 class="text-sm font-semibold text-gray-100 mb-3">What you'll build/learn:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Python/JS basics and problem-solving
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                A virtual pet (Tamagotchi-style) final project
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Git/GitHub and how to read docs
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Debugging, testing, and demos
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gradient-border">
+                        <button class="w-full py-3 font-semibold text-gray-100 hover:text-orange-400 transition-colors duration-200">
+                            Join This Lab
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Robotics Lab -->
+                <div class="lab-card bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 hover-glow border border-gray-800/50" data-category="tech">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-yellow-500 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-full">Beginner-Friendly</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">The Robotics Lab</h3>
+                    <p class="text-gray-300 mb-6">Hands-on robotics concepts made approachable—mechanics, sensors, and simple control.</p>
+                    <div class="mb-8">
+                        <h4 class="text-sm font-semibold text-gray-100 mb-3">What you'll build/learn:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Intro to microcontrollers and sensors
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Simple autonomous behaviors
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Basic CAD or kit-based assembly
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Team roles and build logs
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gradient-border">
+                        <button class="w-full py-3 font-semibold text-gray-100 hover:text-orange-400 transition-colors duration-200">
+                            Join This Lab
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tennis Lab -->
+                <div class="lab-card bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 hover-glow border border-gray-800/50" data-category="sports">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-red-500 rounded-xl flex items-center justify-center">
+                            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                <div class="w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-yellow-500 to-red-500 text-white rounded-full">All Levels</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">The Tennis Lab</h3>
+                    <p class="text-gray-300 mb-6">Technique, strategy, and mental game from competitive players who coach like teammates.</p>
+                    <div class="mb-8">
+                        <h4 class="text-sm font-semibold text-gray-100 mb-3">What you'll build/learn:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Footwork and stroke fundamentals
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Match strategy & video breakdown
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Practice plans and progression tracking
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Fitness and recovery basics
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gradient-border">
+                        <button class="w-full py-3 font-semibold text-gray-100 hover:text-orange-400 transition-colors duration-200">
+                            Join This Lab
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Basketball Lab -->
+                <div class="lab-card bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 hover-glow border border-gray-800/50" data-category="sports">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-400 to-yellow-500 rounded-xl flex items-center justify-center">
+                            <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center relative">
+                                <div class="w-6 h-6 bg-orange-500 rounded-full border-2 border-black"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-4 h-0.5 bg-black rounded-full"></div>
+                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center rotate-90">
+                                    <div class="w-4 h-0.5 bg-black rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-red-500 to-yellow-500 text-white rounded-full">All Levels</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">The Basketball Lab</h3>
+                    <p class="text-gray-300 mb-6">Skill development with a focus on IQ, spacing, and confident decision-making.</p>
+                    <div class="mb-8">
+                        <h4 class="text-sm font-semibold text-gray-100 mb-3">What you'll build/learn:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Ball-handling and shooting form
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Defensive principles and movement
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Small-sided games & film study
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Personalized drills you can repeat
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gradient-border">
+                        <button class="w-full py-3 font-semibold text-gray-100 hover:text-orange-400 transition-colors duration-200">
+                            Join This Lab
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Music Lab -->
+                <div class="lab-card bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 hover-glow border border-gray-800/50" data-category="arts">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full">Beginner-Friendly</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">The Music Lab</h3>
+                    <p class="text-gray-300 mb-6">Find your sound. We cover practice systems, performance confidence, and simple production.</p>
+                    <div class="mb-8">
+                        <h4 class="text-sm font-semibold text-gray-100 mb-3">What you'll build/learn:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Instrument or vocal technique routines
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Song studies and mini-recitals
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Basics of recording/DAW
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Collaboration and ear training
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gradient-border">
+                        <button class="w-full py-3 font-semibold text-gray-100 hover:text-orange-400 transition-colors duration-200">
+                            Join This Lab
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Leadership Lab -->
+                <div class="lab-card bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 hover-glow border border-gray-800/50" data-category="leadership">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full">All Levels</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">The Leadership Lab</h3>
+                    <p class="text-gray-300 mb-6">Practical leadership through doing—projects, pitches, and feedback loops.</p>
+                    <div class="mb-8">
+                        <h4 class="text-sm font-semibold text-gray-100 mb-3">What you'll build/learn:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Goal setting and execution frameworks
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Team communication & conflict basics
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Public speaking and pitch craft
+                            </li>
+                            <li class="flex items-start text-sm text-gray-400">
+                                <div class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                Portfolio: a project you plan and deliver
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gradient-border">
+                        <button class="w-full py-3 font-semibold text-gray-100 hover:text-orange-400 transition-colors duration-200">
+                            Join This Lab
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                <span class="gradient-text">Not sure which lab fits?</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Talk to a mentor to find the perfect program for your interests and goals.
+            </p>
+            <div class="gradient-border">
+                <a href="contact.html" class="inline-block px-8 py-4 font-semibold text-gray-100 hover:text-orange-400 transition-colors duration-200">
+                    Talk to a Mentor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-blur');
+            } else {
+                navbar.classList.remove('navbar-blur');
+            }
+        });
+        
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const labCards = document.querySelectorAll('.lab-card');
+        
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                filterTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                const filter = tab.getAttribute('data-filter');
+                
+                labCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
